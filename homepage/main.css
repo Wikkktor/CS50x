@@ -1,0 +1,39 @@
+.mylist {
+    font-size: 20px;
+    list-style: square;
+    color: green;
+}
+.flex_coint {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+.block {
+    width: 20%;
+    height: 200px;
+    border: solid 2px;
+    border-color: red;
+    cursor:pointer;
+}
+
+.noorder_list {
+    position: absolute;
+    top:50%;
+    font-size: 40px;
+}
+
+.header {
+    font-size: 40px;
+    color: red;
+    transform: rotate(270deg)
+}
+.myform {
+    text-align: center;
+    margin-top: 20px;
+}
+.mybutton{
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+}

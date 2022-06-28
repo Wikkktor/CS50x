@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What language is the best?</h3>
+                <h4 id="answer_bad" style="display:none;">Incorrect</h4>
+                <h4 id="answer_good" style="display:none;">Correct!</h4>
+                <div class="questions">
+                    <button id="bad">Java</button>
+                    <button id="bad">C#</button>
+                    <button id="good">Python</button>
+                </div>
+                <script>
+                    const bad_answers = document.querySelectorAll('#bad');
+                    bad_answers.forEach(answer => {
+                        answer.addEventListener('click', event => {
+                            answer.style.backgroundColor = 'red'
+                            document.querySelector('#answer_bad').style.display = 'block';
+                            document.querySelector('#answer_good').style.display = 'none';
+
+                        })
+                    })
+                    const good_answer = document.querySelector('#good');
+                    good_answer.addEventListener('click', event => {
+                        good_answer.style.backgroundColor = 'green';
+                        document.querySelector('#answer_bad').style.display = 'none';
+                        document.querySelector('#answer_good').style.display = 'block';
+                    })
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is 2 + 2 * 2?</h3>
+                <h4 id="bad_asnwer" style="display:none;">Incorrect</h4>
+                <h4 id="good_answer" style="display:none;">Correct!</h4>
+                <input type="text" id="user_answer">
+                <button id="button_check">Check</button>
+                <script>
+                    document.querySelector('#button_check').addEventListener('click', event => {
+                        const input_answer = document.querySelector('#user_answer').value
+                        console.log(input_answer)
+                        if (input_answer === '6'){
+                            document.querySelector('#good_answer').style.display = 'block'
+                            document.querySelector('#bad_asnwer').style.display = 'none'
+                        }
+                        else {
+                            document.querySelector('#bad_asnwer').style.display = 'block'
+                            document.querySelector('#good_answer').style.display = 'none'
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
